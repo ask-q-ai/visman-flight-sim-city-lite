@@ -1,0 +1,893 @@
+{
+  "initial_vm_state": {
+    "yaw": 0.0,
+    "pitch": 0.0,
+    "speed": 18.0,
+    "camera_mode": "chase"
+  },
+  "stateConstraints": [
+    {
+      "path": "vm.yaw",
+      "mode": "wrap",
+      "min": -3.141592653589793,
+      "max": 3.141592653589793
+    },
+    {
+      "path": "vm.pitch",
+      "mode": "clamp",
+      "min": -0.6,
+      "max": 0.6
+    },
+    {
+      "path": "vm.speed",
+      "mode": "clamp",
+      "min": 0.0,
+      "max": 85.0
+    }
+  ],
+  "camera": {
+    "followTarget": "plane",
+    "followOffset": {
+      "x": 0,
+      "y": 2.2,
+      "z": 8.0
+    },
+    "followSmoothing": 0.16,
+    "fov": 72,
+    "lookAhead": 10,
+    "cameraDamping": 8,
+    "speedFovBoost": 0.02,
+    "turnBank": 0.0,
+    "microShake": 0.004,
+    "activeProfilePath": "@vm.camera_mode",
+    "profiles": {
+      "chase": {
+        "followTarget": "plane",
+        "followOffset": {
+          "x": 0,
+          "y": 2.2,
+          "z": 8.0
+        },
+        "followSmoothing": 0.16,
+        "fov": 72,
+        "lookAhead": 10,
+        "cameraDamping": 8,
+        "speedFovBoost": 0.02,
+        "turnBank": 0.0,
+        "microShake": 0.004
+      },
+      "pov": {
+        "followTarget": "plane",
+        "followOffset": {
+          "x": 0,
+          "y": 0.58,
+          "z": 0.2
+        },
+        "followSmoothing": 0.2,
+        "fov": 86,
+        "lookAhead": 24,
+        "cameraDamping": 12,
+        "speedFovBoost": 0.014,
+        "turnBank": 0.0,
+        "microShake": 0.003
+      }
+    },
+    "enableControls": false
+  },
+  "background": {
+    "color": "#A9CBE6"
+  },
+  "atmosphere": {
+    "preset": "day",
+    "fogColor": "#D2E1EA",
+    "fogNear": 130,
+    "fogFar": 780,
+    "density": 0.0002,
+    "exposure": 1.03
+  },
+  "shadows": {
+    "enabled": false,
+    "autoUpdate": false
+  },
+  "postProcessing": {
+    "enabled": false,
+    "bloomEnabled": false,
+    "filmEnabled": false
+  },
+  "lights": [
+    {
+      "id": "city-ambient-lite",
+      "type": "ambient",
+      "color": "#F3F6FB",
+      "intensity": 0.8
+    },
+    {
+      "id": "sun-lite",
+      "type": "directional",
+      "color": "#FFF7E6",
+      "intensity": 1.0,
+      "position": {
+        "x": 44,
+        "y": 60,
+        "z": 30
+      },
+      "castShadow": false
+    }
+  ],
+  "threeJsLayer": [
+    {
+      "id": "city-foundation-lite",
+      "context": "threejs",
+      "type": "box",
+      "position": {
+        "x": 0,
+        "y": -0.24,
+        "z": -70
+      },
+      "size": {
+        "width": 130,
+        "height": 0.5,
+        "depth": 420
+      },
+      "material": {
+        "color": "#6A7E8E",
+        "usePbr": true,
+        "roughness": 0.86,
+        "metalness": 0.08
+      }
+    },
+    {
+      "id": "runway-deck-lite",
+      "context": "threejs",
+      "type": "box",
+      "position": {
+        "x": 0,
+        "y": 0.01,
+        "z": -70
+      },
+      "size": {
+        "width": 8.4,
+        "height": 0.08,
+        "depth": 360
+      },
+      "material": {
+        "color": "#536778",
+        "usePbr": true,
+        "roughness": 0.72,
+        "metalness": 0.12
+      }
+    },
+    {
+      "id": "runway-dash-lite-0",
+      "context": "threejs",
+      "type": "box",
+      "position": {
+        "x": 0,
+        "y": 0.08,
+        "z": 120.0
+      },
+      "size": {
+        "width": 0.38,
+        "height": 0.04,
+        "depth": 4.0
+      },
+      "material": {
+        "color": "#DDE7F4",
+        "opacity": 0.45,
+        "usePbr": true,
+        "roughness": 0.48,
+        "metalness": 0.36
+      }
+    },
+    {
+      "id": "runway-dash-lite-1",
+      "context": "threejs",
+      "type": "box",
+      "position": {
+        "x": 0,
+        "y": 0.08,
+        "z": 104.0
+      },
+      "size": {
+        "width": 0.38,
+        "height": 0.04,
+        "depth": 4.0
+      },
+      "material": {
+        "color": "#DDE7F4",
+        "opacity": 0.45,
+        "usePbr": true,
+        "roughness": 0.48,
+        "metalness": 0.36
+      }
+    },
+    {
+      "id": "runway-dash-lite-2",
+      "context": "threejs",
+      "type": "box",
+      "position": {
+        "x": 0,
+        "y": 0.08,
+        "z": 88.0
+      },
+      "size": {
+        "width": 0.38,
+        "height": 0.04,
+        "depth": 4.0
+      },
+      "material": {
+        "color": "#DDE7F4",
+        "opacity": 0.45,
+        "usePbr": true,
+        "roughness": 0.48,
+        "metalness": 0.36
+      }
+    },
+    {
+      "id": "runway-dash-lite-3",
+      "context": "threejs",
+      "type": "box",
+      "position": {
+        "x": 0,
+        "y": 0.08,
+        "z": 72.0
+      },
+      "size": {
+        "width": 0.38,
+        "height": 0.04,
+        "depth": 4.0
+      },
+      "material": {
+        "color": "#DDE7F4",
+        "opacity": 0.45,
+        "usePbr": true,
+        "roughness": 0.48,
+        "metalness": 0.36
+      }
+    },
+    {
+      "id": "runway-dash-lite-4",
+      "context": "threejs",
+      "type": "box",
+      "position": {
+        "x": 0,
+        "y": 0.08,
+        "z": 56.0
+      },
+      "size": {
+        "width": 0.38,
+        "height": 0.04,
+        "depth": 4.0
+      },
+      "material": {
+        "color": "#DDE7F4",
+        "opacity": 0.45,
+        "usePbr": true,
+        "roughness": 0.48,
+        "metalness": 0.36
+      }
+    },
+    {
+      "id": "runway-dash-lite-5",
+      "context": "threejs",
+      "type": "box",
+      "position": {
+        "x": 0,
+        "y": 0.08,
+        "z": 40.0
+      },
+      "size": {
+        "width": 0.38,
+        "height": 0.04,
+        "depth": 4.0
+      },
+      "material": {
+        "color": "#DDE7F4",
+        "opacity": 0.45,
+        "usePbr": true,
+        "roughness": 0.48,
+        "metalness": 0.36
+      }
+    },
+    {
+      "id": "runway-dash-lite-6",
+      "context": "threejs",
+      "type": "box",
+      "position": {
+        "x": 0,
+        "y": 0.08,
+        "z": 24.0
+      },
+      "size": {
+        "width": 0.38,
+        "height": 0.04,
+        "depth": 4.0
+      },
+      "material": {
+        "color": "#DDE7F4",
+        "opacity": 0.45,
+        "usePbr": true,
+        "roughness": 0.48,
+        "metalness": 0.36
+      }
+    },
+    {
+      "id": "runway-dash-lite-7",
+      "context": "threejs",
+      "type": "box",
+      "position": {
+        "x": 0,
+        "y": 0.08,
+        "z": 8.0
+      },
+      "size": {
+        "width": 0.38,
+        "height": 0.04,
+        "depth": 4.0
+      },
+      "material": {
+        "color": "#DDE7F4",
+        "opacity": 0.45,
+        "usePbr": true,
+        "roughness": 0.48,
+        "metalness": 0.36
+      }
+    },
+    {
+      "id": "runway-dash-lite-8",
+      "context": "threejs",
+      "type": "box",
+      "position": {
+        "x": 0,
+        "y": 0.08,
+        "z": -8.0
+      },
+      "size": {
+        "width": 0.38,
+        "height": 0.04,
+        "depth": 4.0
+      },
+      "material": {
+        "color": "#DDE7F4",
+        "opacity": 0.45,
+        "usePbr": true,
+        "roughness": 0.48,
+        "metalness": 0.36
+      }
+    },
+    {
+      "id": "runway-dash-lite-9",
+      "context": "threejs",
+      "type": "box",
+      "position": {
+        "x": 0,
+        "y": 0.08,
+        "z": -24.0
+      },
+      "size": {
+        "width": 0.38,
+        "height": 0.04,
+        "depth": 4.0
+      },
+      "material": {
+        "color": "#DDE7F4",
+        "opacity": 0.45,
+        "usePbr": true,
+        "roughness": 0.48,
+        "metalness": 0.36
+      }
+    },
+    {
+      "id": "runway-dash-lite-10",
+      "context": "threejs",
+      "type": "box",
+      "position": {
+        "x": 0,
+        "y": 0.08,
+        "z": -40.0
+      },
+      "size": {
+        "width": 0.38,
+        "height": 0.04,
+        "depth": 4.0
+      },
+      "material": {
+        "color": "#DDE7F4",
+        "opacity": 0.45,
+        "usePbr": true,
+        "roughness": 0.48,
+        "metalness": 0.36
+      }
+    },
+    {
+      "id": "runway-dash-lite-11",
+      "context": "threejs",
+      "type": "box",
+      "position": {
+        "x": 0,
+        "y": 0.08,
+        "z": -56.0
+      },
+      "size": {
+        "width": 0.38,
+        "height": 0.04,
+        "depth": 4.0
+      },
+      "material": {
+        "color": "#DDE7F4",
+        "opacity": 0.45,
+        "usePbr": true,
+        "roughness": 0.48,
+        "metalness": 0.36
+      }
+    },
+    {
+      "id": "runway-dash-lite-12",
+      "context": "threejs",
+      "type": "box",
+      "position": {
+        "x": 0,
+        "y": 0.08,
+        "z": -72.0
+      },
+      "size": {
+        "width": 0.38,
+        "height": 0.04,
+        "depth": 4.0
+      },
+      "material": {
+        "color": "#DDE7F4",
+        "opacity": 0.45,
+        "usePbr": true,
+        "roughness": 0.48,
+        "metalness": 0.36
+      }
+    },
+    {
+      "id": "runway-dash-lite-13",
+      "context": "threejs",
+      "type": "box",
+      "position": {
+        "x": 0,
+        "y": 0.08,
+        "z": -88.0
+      },
+      "size": {
+        "width": 0.38,
+        "height": 0.04,
+        "depth": 4.0
+      },
+      "material": {
+        "color": "#DDE7F4",
+        "opacity": 0.45,
+        "usePbr": true,
+        "roughness": 0.48,
+        "metalness": 0.36
+      }
+    },
+    {
+      "id": "runway-dash-lite-14",
+      "context": "threejs",
+      "type": "box",
+      "position": {
+        "x": 0,
+        "y": 0.08,
+        "z": -104.0
+      },
+      "size": {
+        "width": 0.38,
+        "height": 0.04,
+        "depth": 4.0
+      },
+      "material": {
+        "color": "#DDE7F4",
+        "opacity": 0.45,
+        "usePbr": true,
+        "roughness": 0.48,
+        "metalness": 0.36
+      }
+    },
+    {
+      "id": "runway-dash-lite-15",
+      "context": "threejs",
+      "type": "box",
+      "position": {
+        "x": 0,
+        "y": 0.08,
+        "z": -120.0
+      },
+      "size": {
+        "width": 0.38,
+        "height": 0.04,
+        "depth": 4.0
+      },
+      "material": {
+        "color": "#DDE7F4",
+        "opacity": 0.45,
+        "usePbr": true,
+        "roughness": 0.48,
+        "metalness": 0.36
+      }
+    },
+    {
+      "id": "runway-dash-lite-16",
+      "context": "threejs",
+      "type": "box",
+      "position": {
+        "x": 0,
+        "y": 0.08,
+        "z": -136.0
+      },
+      "size": {
+        "width": 0.38,
+        "height": 0.04,
+        "depth": 4.0
+      },
+      "material": {
+        "color": "#DDE7F4",
+        "opacity": 0.45,
+        "usePbr": true,
+        "roughness": 0.48,
+        "metalness": 0.36
+      }
+    },
+    {
+      "id": "runway-dash-lite-17",
+      "context": "threejs",
+      "type": "box",
+      "position": {
+        "x": 0,
+        "y": 0.08,
+        "z": -152.0
+      },
+      "size": {
+        "width": 0.38,
+        "height": 0.04,
+        "depth": 4.0
+      },
+      "material": {
+        "color": "#DDE7F4",
+        "opacity": 0.45,
+        "usePbr": true,
+        "roughness": 0.48,
+        "metalness": 0.36
+      }
+    },
+    {
+      "id": "west-lite-tower-0",
+      "context": "threejs",
+      "type": "box",
+      "position": {
+        "x": -12.8,
+        "y": 6.5,
+        "z": 36.0
+      },
+      "size": {
+        "width": 5.2,
+        "height": 13.0,
+        "depth": 5.2
+      },
+      "material": {
+        "color": "#465C73",
+        "usePbr": true,
+        "roughness": 0.7,
+        "metalness": 0.2
+      }
+    },
+    {
+      "id": "west-lite-tower-1",
+      "context": "threejs",
+      "type": "box",
+      "position": {
+        "x": -12.8,
+        "y": 8.0,
+        "z": 0.0
+      },
+      "size": {
+        "width": 5.2,
+        "height": 16.0,
+        "depth": 5.2
+      },
+      "material": {
+        "color": "#3D5267",
+        "usePbr": true,
+        "roughness": 0.7,
+        "metalness": 0.2
+      }
+    },
+    {
+      "id": "west-lite-tower-2",
+      "context": "threejs",
+      "type": "box",
+      "position": {
+        "x": -12.8,
+        "y": 7.5,
+        "z": -36.0
+      },
+      "size": {
+        "width": 5.2,
+        "height": 15.0,
+        "depth": 5.2
+      },
+      "material": {
+        "color": "#465C73",
+        "usePbr": true,
+        "roughness": 0.7,
+        "metalness": 0.2
+      }
+    },
+    {
+      "id": "west-lite-tower-3",
+      "context": "threejs",
+      "type": "box",
+      "position": {
+        "x": -12.8,
+        "y": 9.0,
+        "z": -72.0
+      },
+      "size": {
+        "width": 5.2,
+        "height": 18.0,
+        "depth": 5.2
+      },
+      "material": {
+        "color": "#3D5267",
+        "usePbr": true,
+        "roughness": 0.7,
+        "metalness": 0.2
+      }
+    },
+    {
+      "id": "east-lite-tower-0",
+      "context": "threejs",
+      "type": "box",
+      "position": {
+        "x": 12.8,
+        "y": 7.0,
+        "z": 36.0
+      },
+      "size": {
+        "width": 5.2,
+        "height": 14.0,
+        "depth": 5.2
+      },
+      "material": {
+        "color": "#465C73",
+        "usePbr": true,
+        "roughness": 0.7,
+        "metalness": 0.2
+      }
+    },
+    {
+      "id": "east-lite-tower-1",
+      "context": "threejs",
+      "type": "box",
+      "position": {
+        "x": 12.8,
+        "y": 8.5,
+        "z": 0.0
+      },
+      "size": {
+        "width": 5.2,
+        "height": 17.0,
+        "depth": 5.2
+      },
+      "material": {
+        "color": "#3D5267",
+        "usePbr": true,
+        "roughness": 0.7,
+        "metalness": 0.2
+      }
+    },
+    {
+      "id": "east-lite-tower-2",
+      "context": "threejs",
+      "type": "box",
+      "position": {
+        "x": 12.8,
+        "y": 7.5,
+        "z": -36.0
+      },
+      "size": {
+        "width": 5.2,
+        "height": 15.0,
+        "depth": 5.2
+      },
+      "material": {
+        "color": "#465C73",
+        "usePbr": true,
+        "roughness": 0.7,
+        "metalness": 0.2
+      }
+    },
+    {
+      "id": "east-lite-tower-3",
+      "context": "threejs",
+      "type": "box",
+      "position": {
+        "x": 12.8,
+        "y": 9.5,
+        "z": -72.0
+      },
+      "size": {
+        "width": 5.2,
+        "height": 19.0,
+        "depth": 5.2
+      },
+      "material": {
+        "color": "#3D5267",
+        "usePbr": true,
+        "roughness": 0.7,
+        "metalness": 0.2
+      }
+    },
+    {
+      "id": "plane",
+      "context": "threejs",
+      "type": "box",
+      "position": {
+        "x": 0,
+        "y": 15,
+        "z": 0
+      },
+      "rotation": {
+        "x": "{{ @vm.pitch }}",
+        "y": "{{ @vm.yaw }}",
+        "z": 0.0
+      },
+      "size": {
+        "width": 1.2,
+        "height": 0.34,
+        "depth": 1.8
+      },
+      "material": {
+        "color": "#EAF4FF",
+        "usePbr": true,
+        "roughness": 0.26,
+        "metalness": 0.62,
+        "clearcoat": 0.7,
+        "clearcoatRoughness": 0.2
+      },
+      "physics": {
+        "kinematic": true,
+        "bodyType": "kinematic",
+        "forwardSpeedPath": "speed",
+        "minForwardSpeed": 0,
+        "maxForwardSpeed": 85
+      },
+      "actions": {
+        "steer_left": {
+          "stateMutations": [
+            {
+              "path": "vm.yaw",
+              "operation": "add_wrapped",
+              "value": 0.04,
+              "min": -3.141592653589793,
+              "max": 3.141592653589793
+            }
+          ]
+        },
+        "steer_right": {
+          "stateMutations": [
+            {
+              "path": "vm.yaw",
+              "operation": "add_wrapped",
+              "value": -0.04,
+              "min": -3.141592653589793,
+              "max": 3.141592653589793
+            }
+          ]
+        },
+        "steer_up": {
+          "stateMutations": [
+            {
+              "path": "vm.pitch",
+              "operation": "add_clamped",
+              "value": 0.02,
+              "min": -0.6,
+              "max": 0.6
+            }
+          ]
+        },
+        "steer_down": {
+          "stateMutations": [
+            {
+              "path": "vm.pitch",
+              "operation": "add_clamped",
+              "value": -0.02,
+              "min": -0.6,
+              "max": 0.6
+            }
+          ]
+        },
+        "toggle_camera": {
+          "stateMutations": [
+            {
+              "path": "vm.camera_mode",
+              "operation": "cycle_enum",
+              "choices": [
+                "chase",
+                "pov"
+              ]
+            }
+          ]
+        },
+        "throttle_up": {
+          "stateMutations": [
+            {
+              "path": "vm.speed",
+              "operation": "add_clamped",
+              "value": 5.0,
+              "min": 0.0,
+              "max": 85.0
+            }
+          ]
+        },
+        "throttle_down": {
+          "stateMutations": [
+            {
+              "path": "vm.speed",
+              "operation": "add_clamped",
+              "value": -5.0,
+              "min": 0.0,
+              "max": 85.0
+            }
+          ]
+        }
+      },
+      "callbacks": {
+        "onKeyHeld": {
+          "ArrowLeft": "steer_left",
+          "ArrowRight": "steer_right",
+          "ArrowUp": "steer_up",
+          "ArrowDown": "steer_down"
+        },
+        "onKeyDown": {
+          "w": "throttle_up",
+          "s": "throttle_down",
+          "c": "toggle_camera",
+          "W": "throttle_up",
+          "S": "throttle_down",
+          "C": "toggle_camera"
+        }
+      }
+    }
+  ],
+  "domLayer": [
+    {
+      "id": "hud-lite",
+      "context": "dom",
+      "type": "div",
+      "position": {
+        "x": 20,
+        "y": 15
+      },
+      "properties": {
+        "text": "CITY FLIGHT LITE  SPD {{ @vm.speed }}  YAW {{ @vm.yaw }}"
+      },
+      "style": {
+        "color": "#72E1FF",
+        "fontSize": 16,
+        "fontFamily": "monospace",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "id": "controls-lite",
+      "context": "dom",
+      "type": "div",
+      "position": {
+        "x": 20,
+        "y": 330
+      },
+      "properties": {
+        "text": "ARROWS steer | W/S throttle | C camera"
+      },
+      "style": {
+        "color": "rgba(255,255,255,0.72)",
+        "fontSize": 13,
+        "fontFamily": "monospace"
+      }
+    }
+  ]
+}
